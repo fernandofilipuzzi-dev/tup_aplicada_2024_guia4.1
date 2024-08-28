@@ -41,12 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\IEnvioDAO.cs" />
+    <Compile Include="DAO\SQImpl\EnvioDAOSQImpl.cs" />
+    <Compile Include="DAO\DBFactory.cs" />
     <Compile Include="Models\Costo.cs" />
     <Compile Include="Models\Envio.cs" />
     <Compile Include="Models\Fijo.cs" />
     <Compile Include="Models\Variable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DAO\PGImpl\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

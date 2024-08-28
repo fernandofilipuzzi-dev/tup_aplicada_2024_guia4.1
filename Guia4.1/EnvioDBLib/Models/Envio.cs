@@ -16,31 +16,6 @@ namespace EnvioDBLib.Models
             return $"{Id} - {ValorTotal}";
         }
 
-        public List<Envio> ListarTodo()
-        {
-            var lista = new List<Envio>();
-
-            using (var conn = new SqlConnection() { ConnectionString= "Server=TUPDEV; DATABASE=EnviosDB; user='alumno'; password='alumno'; Trusted_Connection=True; " })
-            {
-                var cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Envios";
-                cmd.CommandType = CommandType.Text;
-
-                conn.Open();
-                
-                var rd = cmd.ExecuteReader();
-                while (rd.Read() == true)
-                {
-                    lista.Add(new Envio()
-                    {
-                        Id = rd.GetInt32(rd.GetOrdinal("Id")),
-                        ValorTotal = Convert.ToDouble(rd.GetDecimal(rd.GetOrdinal("Valor_Total"))),
-                    });
-                }
-                conn.Close();
-            }
-
-            return lista;
-        }
+        
     }
 }

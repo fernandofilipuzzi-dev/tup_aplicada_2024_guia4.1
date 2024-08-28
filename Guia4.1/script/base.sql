@@ -43,7 +43,9 @@ GO
 USE EnviosDB
 
 INSERT INTO Envios(Valor_Total)
-VALUES(0)
+VALUES(3.1)
+GO
+SELECT SCOPE_IDENTITY();
 
 DECLARE @Id_Envio INT=1;
 
@@ -53,8 +55,11 @@ VALUES(0,'Peaje puente zarate', 300, null,null,@Id_Envio),
 (0,'Peaje t�nel', 300, null,null,@Id_Envio),
 (1,'Horas de conducci�n', null, 1500.5, 500,@Id_Envio)
 
+
+
 GO
 SELECT * FROM Envios e
 JOIN Costos c ON c.Id_Envio=e.Id
 
 SELECT * FROM Envios
+
