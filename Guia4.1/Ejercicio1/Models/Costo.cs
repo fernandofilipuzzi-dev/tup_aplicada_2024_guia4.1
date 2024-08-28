@@ -2,11 +2,10 @@
 
 namespace Ejercicio1.Models
 {
-    public class Costo
+    abstract  public class Costo
     {
         public int Id { get; set; }
         public string Concepto { get; set; }
-
         public double ValorFinal { get; set; }
     }
 }

@@ -11,5 +11,7 @@ namespace EnvioDBLib.DAO
         void Delete(int id);
 
         List<Costo> GetAll();
+
+        List<Costo> GetByIdEnvio(int idEnvio);
     }
 }
