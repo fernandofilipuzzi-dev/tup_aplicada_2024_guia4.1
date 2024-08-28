@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{36936DD6-7580-4A42-A57B-533404F1A6CC}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EnvioDBLib</RootNamespace>
-    <AssemblyName>EnvioDBLib</AssemblyName>
+    <ProjectGuid>{16424740-CD4A-4D21-B24D-7103A617F4EA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ejercicio2</RootNamespace>
+    <AssemblyName>Ejercicio2</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,25 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\ICostoDAO.cs" />
-    <Compile Include="DAO\IEnvioDAO.cs" />
-    <Compile Include="DAO\MSSDAOImpl\CostoMSSDAOImpl.cs" />
-    <Compile Include="DAO\MSSDAOImpl\MSSDAOFactory.cs" />
-    <Compile Include="DAO\MSSDAOImpl\EnvioMSSDAOImpl.cs" />
-    <Compile Include="DAO\DBDAOFactory.cs" />
-    <Compile Include="DAO\PGDAPImpl\PGDAOFactory.cs" />
-    <Compile Include="Models\Costo.cs" />
-    <Compile Include="Models\Envio.cs" />
-    <Compile Include="Models\Fijo.cs" />
-    <Compile Include="Models\Variable.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UML\dao.jpg" />
-    <Content Include="UML\modelo.jpg" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="UML\Envios.uml" />
+    <ProjectReference Include="..\EnvioDBLib\EnvioDBLib.csproj">
+      <Project>{36936dd6-7580-4a42-a57b-533404f1a6cc}</Project>
+      <Name>EnvioDBLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

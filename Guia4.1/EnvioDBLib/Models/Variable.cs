@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace EnvioDBLib.Models
 {
-    internal class Variable:Costo
+    public class Variable:Costo
     {
+        public double PrecioPorUnidad { get; set; }
+        public double Unidades { get; set; }
+
     }
 }

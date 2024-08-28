@@ -1,9 +1,6 @@
 ﻿
-using EnvioDBLib.DAO;
-using EnvioDBLib.DAO.SQLImpl;
-using EnvioDBLib.Models;
+using Ejercicio1.Models;
 using System;
-using System.Data.Odbc;
 
 namespace Ejercicio1
 {
@@ -11,23 +8,11 @@ namespace Ejercicio1
     {
         static void Main(string[] args)
         {
-            IEnvioDAO e = DBFactory.getInstancia("SQL-SERVER");
-
-            //
-            Console.WriteLine("Ejemplo insertando dato");
-            var nuevo = new Envio() { ValorTotal = 23.1 };
-            e.Add(nuevo);
-            Console.WriteLine($"{nuevo}");
-
-            Console.WriteLine("Ejemplo insertando dato");
-            nuevo.ValorTotal = 58.33;
-            e.Update(nuevo);
-            Console.WriteLine($"{nuevo}");
-
+            Envio envio = new Envio();
 
             //
             Console.WriteLine("Ejemplo listando datos");
-            foreach (var env in e.ListarTodo())
+            foreach (var env in envio.GetAll())
             {
                 Console.WriteLine(env);
             }

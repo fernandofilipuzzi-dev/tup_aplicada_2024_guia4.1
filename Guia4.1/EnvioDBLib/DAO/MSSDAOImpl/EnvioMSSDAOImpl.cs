@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace EnvioDBLib.DAO.SQLImpl
+namespace EnvioDBLib.DAO.MSSDAOImpl
 {
-    public class EnvioDAOSQImpl : IEnvioDAO
+    public class EnvioMSSDAOImpl : IEnvioDAO
     {
-
+        
         public void Add(Envio nuevo)
         {
 
-            using (var conn = new SqlConnection() { ConnectionString = "Server=TUPDEV; DATABASE=EnviosDB; user='alumno'; password='alumno'; Trusted_Connection=True; " })
+            using (var conn = new SqlConnection() { ConnectionString = MSSDAOFactory.ConnectionString })
             {
                 var cmd = conn.CreateCommand();
                 cmd.CommandText = "INSERT INTO Envios(Valor_Total) VALUES(@ValorTotal); SELECT SCOPE_IDENTITY();";
@@ -31,8 +31,7 @@ namespace EnvioDBLib.DAO.SQLImpl
 
         public void Update(Envio obj)
         {
-
-            using (var conn = new SqlConnection() { ConnectionString = "Server=TUPDEV; DATABASE=EnviosDB; user='alumno'; password='alumno'; Trusted_Connection=True; " })
+            using (var conn = new SqlConnection() { ConnectionString = MSSDAOFactory.ConnectionString })
             {
                 var cmd = conn.CreateCommand();
                 cmd.CommandText = "Update Envios SET Valor_Total=@ValorTotal WHERE Id=@Id";
@@ -44,23 +43,37 @@ namespace EnvioDBLib.DAO.SQLImpl
                 conn.Open();
 
                 cmd.ExecuteNonQuery();
+            }
+        }
+        
+        public void Delete(int id)
+        {
+            using (var conn = new SqlConnection() { ConnectionString = MSSDAOFactory.ConnectionString })
+            {
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = "DELETE FROM Envios WHERE Id=@Id";
+                cmd.CommandType = CommandType.Text;
 
+                cmd.Parameters.Add("@Id", id);
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
             }
         }
 
-
-        public List<Envio> ListarTodo()
+        public List<Envio> GetAll()
         {
             var lista = new List<Envio>();
 
-            using (var conn = new SqlConnection() { ConnectionString= "Server=TUPDEV; DATABASE=EnviosDB; user='alumno'; password='alumno'; Trusted_Connection=True; " })
+            using (var conn = new SqlConnection() { ConnectionString = MSSDAOFactory.ConnectionString })
             {
                 var cmd = conn.CreateCommand();
                 cmd.CommandText = "SELECT * FROM Envios ORDER BY Valor_Total DESC";
                 cmd.CommandType = CommandType.Text;
 
                 conn.Open();
-                
+
                 var rd = cmd.ExecuteReader();
                 while (rd.Read() == true)
                 {

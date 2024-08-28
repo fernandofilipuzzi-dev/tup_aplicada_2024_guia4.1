@@ -1,6 +1,6 @@
 ﻿
 
-namespace EnvioDBLib.Models
+namespace Ejercicio1.Models
 {
     public class Costo
     {
@@ -8,7 +8,5 @@ namespace EnvioDBLib.Models
         public string Concepto { get; set; }
 
         public double ValorFinal { get; set; }
-
-       
     }
 }

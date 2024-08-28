@@ -1,16 +1,15 @@
 ﻿using EnvioDBLib.Models;
 using System.Collections.Generic;
-
 namespace EnvioDBLib.DAO
 {
-    public interface IEnvioDAO
+    public interface ICostoDAO
     {
-        void Add(Envio nuevo);
+        void Add(Costo nuevo);
 
-        void Update(Envio obj);
+        void Update(Costo obj);
 
         void Delete(int id);
 
-        List<Envio> GetAll();
+        List<Costo> GetAll();
     }
 }

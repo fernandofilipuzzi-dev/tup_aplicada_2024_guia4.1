@@ -43,17 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Costo.cs" />
+    <Compile Include="Models\Envio.cs" />
+    <Compile Include="Models\Fijo.cs" />
+    <Compile Include="Models\Variable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EnvioDBLib\EnvioDBLib.csproj">
-      <Project>{36936dd6-7580-4a42-a57b-533404f1a6cc}</Project>
-      <Name>EnvioDBLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

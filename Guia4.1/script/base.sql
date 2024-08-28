@@ -63,3 +63,5 @@ JOIN Costos c ON c.Id_Envio=e.Id
 
 SELECT * FROM Envios
 
+
+

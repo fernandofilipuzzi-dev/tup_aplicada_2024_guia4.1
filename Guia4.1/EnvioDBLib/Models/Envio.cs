@@ -9,13 +9,11 @@ namespace EnvioDBLib.Models
     {
         public int Id { get; set; }
         public double ValorTotal { get; set; }
-        public List<Costo> costos { get; set; } = new List<Costo>();
+        public List<Costo> Costos { get; set; } = new List<Costo>();
 
         public override string ToString()
         {
             return $"{Id} - {ValorTotal}";
         }
-
-        
     }
 }

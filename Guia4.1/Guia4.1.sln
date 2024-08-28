@@ -20,6 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UML", "UML", "{C267EF4E-C1A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvioDBLib", "EnvioDBLib\EnvioDBLib.csproj", "{36936DD6-7580-4A42-A57B-533404F1A6CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2_patron_dao", "Ejercicio2\Ejercicio2_patron_dao.csproj", "{16424740-CD4A-4D21-B24D-7103A617F4EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio3_patron_factory_do", "Ejercicio3\Ejercicio3_patron_factory_do.csproj", "{CE40AD8A-E85A-4771-8983-E946B68F9672}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +38,14 @@ Global
 		{36936DD6-7580-4A42-A57B-533404F1A6CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36936DD6-7580-4A42-A57B-533404F1A6CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36936DD6-7580-4A42-A57B-533404F1A6CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16424740-CD4A-4D21-B24D-7103A617F4EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16424740-CD4A-4D21-B24D-7103A617F4EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16424740-CD4A-4D21-B24D-7103A617F4EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16424740-CD4A-4D21-B24D-7103A617F4EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE40AD8A-E85A-4771-8983-E946B68F9672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE40AD8A-E85A-4771-8983-E946B68F9672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE40AD8A-E85A-4771-8983-E946B68F9672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE40AD8A-E85A-4771-8983-E946B68F9672}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
